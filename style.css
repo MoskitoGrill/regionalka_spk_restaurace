@@ -1,0 +1,338 @@
+.leaflet-top.leaflet-right {
+  display: none !important;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+:root {
+  --primary-color: #2f3b45;
+  --text-light: white;
+  --text-dark: #2f3b45;
+  --font-main: 'Sans-serif';
+}
+
+body {
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: var(--text-dark);
+}
+
+header {
+  background: var(--primary-color);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+
+header img {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+header::after {
+  content: "";
+  display: block;
+  height: 35px;
+  background-color: var(--primary-color);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  margin-top: 2rem;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footer-left a {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-right img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-right a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-bar {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  background: white;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: auto;
+}
+
+.filter-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0;
+  height: 100%;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+.filter-button:first-child {
+  border-radius: 0;
+  margin-left: 0;
+  padding-left: 1.5rem;
+}
+
+.filter-button:last-child {
+  border-radius: 0 999px 999px 0;
+  margin-right: 0;
+}
+
+.filter-button.active {
+  background: white !important;
+  color: var(--primary-color) !important;
+  border: 3px solid var(--primary-color) !important;
+  border-bottom: 3px solid var(--primary-color) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.filter-button:hover {
+  background: #1d262c;
+  color: white;
+}
+
+.vertical-filter-bar {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  background: transparent;
+  justify-content: flex-end;
+}
+
+.vertical-filter-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+.vertical-filter-button:first-child {
+  border-radius: 999px 0 0 999px;
+}
+
+.vertical-filter-button:last-child {
+  border-radius: 0;
+}
+
+.vertical-filter-button.active {
+  background: white !important;
+  color: var(--primary-color) !important;
+  border: 3px solid var(--primary-color) !important;
+  border-bottom: 3px solid var(--primary-color) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.vertical-filter-button:hover {
+  background: #1d262c;
+  color: white;
+}
+
+.restaurant-card {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+.card-text {
+  flex: 1;
+}
+
+.card-image {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.card-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.card-map {
+  position: relative;
+  height: 200px;
+  margin-top: 1rem;
+}
+
+.fullscreen-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.fullscreen {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999;
+  background: white;
+}
+
+.fullscreen .fullscreen-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+}
+
+.fullscreen .leaflet-control-container {
+  display: none !important;
+}
+
+@media (min-width: 600px) {
+  .card-top {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card-text {
+    flex: 2;
+    margin-right: 1rem;
+  }
+
+  .card-image {
+    flex: 1;
+    margin-top: 0;
+  }
+}
+
+.button-rounded-right {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.8rem;
+  border-radius: 0 999px 999px 0;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.button-rounded-right svg {
+  width: 1rem;
+  height: 1rem;
+  fill: white;
+}
+
+.main-content a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.main-content a:hover {
+  text-decoration: none;
+}
+
+.restaurant-card {
+    border-top: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+.card-description {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-description {
+  margin: 0;
+  font-style: italic;
+  color: #444;
+}
+
+
+.card-map {
+  border-radius: 8px;
+  overflow: hidden;
+}
