@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="cs">
-    <!-- funguje commit?-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,12 +31,12 @@
     <div class="restaurant-card" data-category="pizza těstoviny"> <!--kategorie-->
       <div class="card-top">
         <div class="card-text">
-          <h2>Pizzeria Bella</h2>
-          <p>Pizza, Těstoviny</p>
-          <p><strong>Adresa:</strong> <a href="https://maps.google.com/?q=Náměstí+12,+Brno" target="_blank">Náměstí 12, Brno</a></p><!--odkaz a adresa-->
-          <p><strong>Web:</strong> <a href="https://pizzeriabella.cz" target="_blank">pizzeriabella.cz</a></p><!--Webovky-->
-          <p><strong>Tel:</strong> 123 456 789</p><!--telefon-->
-          <p><strong>Cena:</strong> Kč 150–250</p>
+          <h2>Pizzeria Istria</h2><!--název-->
+          <p>Pizza, Těstoviny</p><!--kategorie popisek-->
+          <p><strong>Adresa:</strong> <a href="https://maps.google.com/?q=Hlavní třída+11,+Šumperk" target="_blank">Hlavní tř. 11/7</a></p><!--odkaz a adresa-->
+          <p><strong>Web:</strong> <a href="https://pizzasumperk.cz/" target="_blank">pizzasumperk.cz</a></p><!--Webovky-->
+          <p><strong>Tel:</strong> 608 161 229</p><!--telefon-->
+          <p><strong>Cena:</strong> Kč 150–200</p><!--cena-->
         </div>
         <div class="card-description">
             <p class="restaurant-description">
@@ -93,18 +92,18 @@
         });
 
 
-    const map1 = L.map('map1').setView([49.2001, 16.6118], 14); //souřadnice restaurace
+    const map1 = L.map('map1').setView([49.96578901812938, 16.975737038034975], 14); //souřadnice restaurace
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map1);
 
     L.marker(startLatLng, { icon: startIcon }).addTo(map1).bindPopup("Start");
-    L.marker([49.2001, 16.6118], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Bella"); //souřadnice restaurace + název
+    L.marker([49.96578901812938, 16.975737038034975], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Istria"); //souřadnice restaurace + název
 
     L.Routing.control({
       waypoints: [
         L.latLng(startLatLng),
-        L.latLng(49.2001, 16.6118) //souřadnice restaurace
+        L.latLng(49.96578901812938, 16.975737038034975) //souřadnice restaurace
       ],
       router: L.Routing.osrmv1({
         serviceUrl: 'https://router.project-osrm.org/route/v1',
