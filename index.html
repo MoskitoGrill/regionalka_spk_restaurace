@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurace ve městě</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" />
+  </header>
+  <main>
+    <div class="filter-bar">
+    <button class="filter-button active" data-category="all">Vše</button>
+    <button class="filter-button" data-category="pizza">Pizza</button>
+    <button class="filter-button" data-category="burger">Burger</button>
+    <button class="filter-button" data-category="těstoviny">Těstoviny</button>
+    </div>
+    <div class="vertical-filter-bar">
+    <button class="vertical-filter-button" data-category="čína">Čína</button>
+    <button class="vertical-filter-button" data-category="sendvič">Sendvič</button>
+    <button class="vertical-filter-button" data-category="kebab">Kebab</button>
+    </div>
+
+  <div class="main-content">
+    <div class="restaurant-card" data-category="pizza těstoviny"> <!--kategorie-->
+      <div class="card-top">
+        <div class="card-text">
+          <h2>Pizzeria Bella</h2>
+          <p>Pizza, Těstoviny</p>
+          <p><strong>Adresa:</strong> <a href="https://maps.google.com/?q=Náměstí+12,+Brno" target="_blank">Náměstí 12, Brno</a></p><!--odkaz a adresa-->
+          <p><strong>Web:</strong> <a href="https://pizzeriabella.cz" target="_blank">pizzeriabella.cz</a></p><!--Webovky-->
+          <p><strong>Tel:</strong> 123 456 789</p><!--telefon-->
+          <p><strong>Cena:</strong> Kč 150–250</p>
+        </div>
+        <div class="card-description">
+            <p class="restaurant-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut est laoreet, eleifend ante euismod, lobortis orci. Ut venenatis mauris eros, nec ornare nisi tincidunt quis. Donec nec mauris augue. 
+            </p>
+        </div>
+      </div>
+      <div class="card-map" id="map1-container">
+        <button class="fullscreen-button" onclick="toggleFullscreen(this, 'map1')">⛶</button>
+        <div id="map1" style="height: 100%;"></div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+    const allFilterButtons = document.querySelectorAll(".filter-button, .vertical-filter-button");
+    const cards = document.querySelectorAll(".restaurant-card");
+
+    allFilterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelector(".filter-button.active")?.classList.remove("active");
+        document.querySelector(".vertical-filter-button.active")?.classList.remove("active");
+
+        btn.classList.add("active");
+
+        const category = btn.dataset.category;
+        cards.forEach(card => {
+        card.style.display = (category === "all" || card.dataset.category.includes(category)) ? "block" : "none";
+        });
+    });
+    });
+    
+    const startLatLng = [49.963984, 16.974440];//výchozí bod
+    const startIcon = L.icon({
+        iconUrl: 'vychozi_bod.png',
+        iconSize: [35, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [0, -34],
+        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+        shadowSize: [41, 41],
+        shadowAnchor: [12, 41]
+        });
+
+        const endIcon = L.icon({
+        iconUrl: 'cilovy_bod.png',
+        iconSize: [35, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [0, -34],
+        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+        shadowSize: [41, 41],
+        shadowAnchor: [12, 41]
+        });
+
+
+    const map1 = L.map('map1').setView([49.2001, 16.6118], 14); //souřadnice restaurace
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map1);
+
+    L.marker(startLatLng, { icon: startIcon }).addTo(map1).bindPopup("Start");
+    L.marker([49.2001, 16.6118], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Bella"); //souřadnice restaurace + název
+
+    L.Routing.control({
+      waypoints: [
+        L.latLng(startLatLng),
+        L.latLng(49.2001, 16.6118) //souřadnice restaurace
+      ],
+      router: L.Routing.osrmv1({
+        serviceUrl: 'https://router.project-osrm.org/route/v1',
+        profile: 'foot'
+      }),
+      routeWhileDragging: false,
+      show: false,
+      addWaypoints: false,
+      createMarker: () => null,
+      lineOptions: {
+        styles: [{ color: '#2f3b45', weight: 5 }]
+      }
+
+    }).addTo(map1);
+
+    function toggleFullscreen(button, mapId) {
+      const container = button.parentElement;
+      container.classList.toggle("fullscreen");
+      setTimeout(() => {
+        const map = mapId === 'map1' ? map1 : null;
+        if (map) map.invalidateSize();
+      }, 300);
+    }
+  </script>
+  </main>
+  <footer>
+    <div class="footer-left">
+        <div>Zpátky do sboru</div>
+        <div><a href="https://maps.google.com/?q=M.R.Štefánika+10a,+787+01+Šumperk" target="_blank">M. R. Štefánika 10a</a></div>
+    </div>
+    <div class="footer-right">
+        <a href="https://www.instagram.com/volant_spk" target="_blank">
+        <img src="instagram_icon.png" alt="Instagram logo">
+        <span>Volant_spk</span>
+        </a>
+    </div>
+  </footer>
+
+</body>
+</html>
