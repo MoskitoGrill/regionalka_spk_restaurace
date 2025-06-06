@@ -92,18 +92,18 @@
         });
 
 
-    const map1 = L.map('map1').setView([49.96578901812938, 16.975737038034975], 14); //souřadnice restaurace
+    const map1 = L.map('map1').setView([49.965903069240326, 16.975748204044415], 14); //souřadnice restaurace
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map1);
 
     L.marker(startLatLng, { icon: startIcon }).addTo(map1).bindPopup("Start");
-    L.marker([49.96578901812938, 16.975737038034975], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Istria"); //souřadnice restaurace + název
+    L.marker([49.965903069240326, 16.975748204044415], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Istria"); //souřadnice restaurace + název
 
     L.Routing.control({
       waypoints: [
         L.latLng(startLatLng),
-        L.latLng(49.96578901812938, 16.975737038034975) //souřadnice restaurace
+        L.latLng(49.965903069240326, 16.975748204044415) //souřadnice restaurace
       ],
       router: L.Routing.osrmv1({
         serviceUrl: 'https://router.project-osrm.org/route/v1',
