@@ -49,6 +49,27 @@
         <div id="map1" style="height: 100%;"></div>
       </div>
     </div>
+    <div class="restaurant-card" data-category="burger"> <!--kategorie-->
+      <div class="card-top">
+        <div class="card-text">
+          <h2>Cakir's Burger</h2><!--název-->
+          <p>Burger</p><!--kategorie popisek-->
+          <p><strong>Adresa:</strong> <a href="https://maps.google.com/?q=nám. Míru+22,+Šumperk" target="_blank">nám. Míru 22</a></p><!--odkaz a adresa-->
+          <p><strong>Web:</strong> <a href="https://www.cakirs.cz/#home" target="_blank">cakirs.cz</a></p><!--Webovky-->
+          <p><strong>Tel:</strong> 775 100 935</p><!--telefon-->
+          <p><strong>Cena:</strong> Kč 150–400</p><!--cena-->
+        </div>
+        <div class="card-description">
+            <p class="restaurant-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut est laoreet, eleifend ante euismod, lobortis orci. Ut venenatis mauris eros, nec ornare nisi tincidunt quis. Donec nec mauris augue. 
+            </p>
+        </div>
+      </div>
+      <div class="card-map" id="map2-container">
+        <button class="fullscreen-button" onclick="toggleFullscreen(this, 'map2')">⛶</button>
+        <div id="map2" style="height: 100%;"></div><!--mapaid-->
+      </div>
+    </div>
   </div>
 
   
@@ -92,18 +113,18 @@
         });
 
 
-    const map1 = L.map('map1').setView([49.965903069240326, 16.975748204044415], 14); //souřadnice restaurace
+    const map1 = L.map('map1').setView([49.965792201057205, 16.97573241815665], 14); //souřadnice restaurace
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map1);
 
     L.marker(startLatLng, { icon: startIcon }).addTo(map1).bindPopup("Start");
-    L.marker([49.965903069240326, 16.975748204044415], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Istria"); //souřadnice restaurace + název
+    L.marker([49.965792201057205, 16.97573241815665], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Istria"); //souřadnice restaurace + název
 
     L.Routing.control({
       waypoints: [
         L.latLng(startLatLng),
-        L.latLng(49.965903069240326, 16.975748204044415) //souřadnice restaurace
+        L.latLng(49.965792201057205, 16.97573241815665) //souřadnice restaurace
       ],
       router: L.Routing.osrmv1({
         serviceUrl: 'https://router.project-osrm.org/route/v1',
@@ -119,14 +140,42 @@
 
     }).addTo(map1);
 
+    const map2 = L.map('map2').setView([49.96585802665727, 16.97147024907664], 14); //souřadnice restaurace
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map2);
+
+    L.marker(startLatLng, { icon: startIcon }).addTo(map2).bindPopup("Start");
+    L.marker([49.96585802665727, 16.97147024907664], { icon: endIcon }).addTo(map2).bindPopup("Cakir's Burger"); //souřadnice restaurace + název
+
+    L.Routing.control({
+      waypoints: [
+        L.latLng(startLatLng),
+        L.latLng(49.96585802665727, 16.97147024907664) //souřadnice restaurace
+      ],
+      router: L.Routing.osrmv1({
+        serviceUrl: 'https://router.project-osrm.org/route/v1',
+        profile: 'foot'
+      }),
+      routeWhileDragging: false,
+      show: false,
+      addWaypoints: false,
+      createMarker: () => null,
+      lineOptions: {
+        styles: [{ color: '#2f3b45', weight: 5 }]
+      }
+
+    }).addTo(map2);
+
     function toggleFullscreen(button, mapId) {
       const container = button.parentElement;
       container.classList.toggle("fullscreen");
       setTimeout(() => {
-        const map = mapId === 'map1' ? map1 : null;
+        const map = mapId === 'map1' ? map1 : mapId === 'map2' ? map2 : null;
         if (map) map.invalidateSize();
       }, 300);
     }
+
   </script>
   </main>
   <footer>
