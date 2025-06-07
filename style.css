@@ -339,16 +339,16 @@ footer {
   overflow: hidden;
 }
 
+
 .program-bar {
   background-color: #2f3b45;
   color: white;
-  font-weight: bold;
-  font-size: 1rem;
+  padding: 0.5rem 1rem;
   text-align: center;
-  padding: 10px;
-  position: relative;
-  z-index: 1000;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
+
 
 .program-bar:hover {
   background-color: #1d262c;
