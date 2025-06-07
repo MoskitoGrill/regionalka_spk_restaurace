@@ -14,6 +14,9 @@
   <header>
     <img src="logo.png" alt="Logo" />
   </header>
+  <div class="program-bar" id="program-bar">
+    <span id="currentProgram">Načítání aktuálního programu...</span>
+  </div>
   <main>
     <div class="filter-bar">
     <button class="filter-button active" data-category="all">Vše</button>
@@ -194,7 +197,63 @@
         if (map) map.invalidateSize();
       }, 300);
     }
+    const schedule = [
+      { start: "09:00", end: "10:10", name: "Registrace" },
+      { start: "10:15", end: "10:25", name: "Přivítání" },
+      { start: "10:30", end: "10:50", name: "Icebreakery" },
+      { start: "12:00", end: "14:00", name: "Oběd" },
+      { start: "22:30", end: "22:40", name: "Workshopy" },
+      { start: "23:00", end: "23:40", name: "Závěrečný program" }
+    ];
 
+    function getCurrentAndNextBlock(schedule) {
+      const now = new Date();
+      const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+      let current = null;
+      let next = null;
+
+      for (let i = 0; i < schedule.length; i++) {
+        const block = schedule[i];
+        const [startH, startM] = block.start.split(":").map(Number);
+        const [endH, endM] = block.end.split(":").map(Number);
+        const startMin = startH * 60 + startM;
+        const endMin = endH * 60 + endM;
+
+        if (currentMinutes >= startMin && currentMinutes < endMin) {
+          current = block;
+          next = schedule[i + 1] || null;
+          break;
+        } else if (currentMinutes < startMin) {
+          // mezera mezi bloky
+          current = null;
+          next = block;
+          break;
+        }
+      }
+
+      return { current, next };
+    }
+
+    function updateProgramBar() {
+      const { current, next } = getCurrentAndNextBlock(schedule);
+      const bar = document.getElementById("program-bar");
+
+      if (current && next) {
+        bar.textContent = `${current.start} - ${current.end} ${current.name} → ${next.start} - ${next.end} ${next.name}`;
+      } else if (current && !next) {
+        bar.textContent = `${current.start} - ${current.end} ${current.name}`;
+      } else if (!current && next) {
+        bar.textContent = `→ ${next.start} - ${next.end} ${next.name}`;
+      } else {
+        bar.textContent = "Program ukončen.";
+      }
+    }
+    document.getElementById("program-bar").addEventListener("click", () => {
+      alert("Zde se později zobrazí celý program. (Plakát)");
+    });
+    updateProgramBar();
+    setInterval(updateProgramBar, 60000); // aktualizace každou minutu
   </script>
   </main>
   <footer>

@@ -52,7 +52,7 @@ header img {
 header::after {
   content: "";
   display: block;
-  height: 35px;
+  height: 0px;
   background-color: var(--primary-color);
 }
 
@@ -337,4 +337,19 @@ footer {
 .card-map {
   border-radius: 8px;
   overflow: hidden;
+}
+
+.program-bar {
+  background-color: #2f3b45;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  z-index: 1000;
+}
+
+.program-bar:hover {
+  background-color: #1d262c;
 }
