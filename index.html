@@ -49,11 +49,11 @@
         <div id="map1" style="height: 100%;"></div>
       </div>
     </div>
-    <div class="restaurant-card" data-category="burger"> <!--kategorie-->
+    <div class="restaurant-card" data-category="burger sendvič"> <!--kategorie-->
       <div class="card-top">
         <div class="card-text">
           <h2>Cakir's Burger</h2><!--název-->
-          <p>Burger</p><!--kategorie popisek-->
+          <p>Burger, Sendvič</p><!--kategorie popisek-->
           <p><strong>Adresa:</strong> <a href="https://maps.google.com/?q=nám. Míru+22,+Šumperk" target="_blank">nám. Míru 22</a></p><!--odkaz a adresa-->
           <p><strong>Web:</strong> <a href="https://www.cakirs.cz/#home" target="_blank">cakirs.cz</a></p><!--Webovky-->
           <p><strong>Tel:</strong> 775 100 935</p><!--telefon-->
@@ -169,7 +169,26 @@
 
     function toggleFullscreen(button, mapId) {
       const container = button.parentElement;
-      container.classList.toggle("fullscreen");
+      const isFullscreen = container.classList.toggle("fullscreen");
+
+      document.querySelectorAll(".leaflet-control-container").forEach(el => {
+        const parentMap = el.closest(".card-map");
+        if (parentMap !== container && isFullscreen) {
+          el.style.display = "none";
+        } else {
+          el.style.display = "";
+        }
+      });
+
+      document.querySelectorAll(".fullscreen-button").forEach(btn => {
+        const parentMap = btn.closest(".card-map");
+        if (parentMap !== container && isFullscreen) {
+          btn.style.display = "none";
+        } else {
+          btn.style.display = "";
+        }
+      });
+
       setTimeout(() => {
         const map = mapId === 'map1' ? map1 : mapId === 'map2' ? map2 : null;
         if (map) map.invalidateSize();

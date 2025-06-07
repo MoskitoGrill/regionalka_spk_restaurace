@@ -250,8 +250,11 @@ footer {
   left: 0;
   width: 100vw !important;
   height: 100vh !important;
-  z-index: 999;
+  z-index: 9999;
   background: white;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
 }
 
 .fullscreen .fullscreen-button {
@@ -312,7 +315,6 @@ footer {
 
 .restaurant-card {
     border-top: 3px solid var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
     padding: 1rem;
     display: flex;
     flex-direction: column;
