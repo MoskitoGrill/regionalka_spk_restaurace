@@ -180,7 +180,6 @@ footer {
 
 .vertical-filter-button:last-child {
   border-radius: 0;
-  margin-right: 0.8rem;
 }
 
 .vertical-filter-button.active {
