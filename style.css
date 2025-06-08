@@ -113,7 +113,7 @@ footer {
   background: var(--primary-color);
   color: white;
   border: none;
-  padding: 0.6rem 1.5rem;
+  padding: 0.6rem 1.1rem;
   font-weight: bold;
   display: inline-flex;
   align-items: center;
@@ -163,7 +163,7 @@ footer {
   background: var(--primary-color);
   color: white;
   border: none;
-  padding: 0.6rem 1.5rem;
+  padding: 0.6rem 1.1rem;
   font-weight: bold;
   display: inline-flex;
   align-items: center;
@@ -180,6 +180,7 @@ footer {
 
 .vertical-filter-button:last-child {
   border-radius: 0;
+  margin-right: 0.8rem;
 }
 
 .vertical-filter-button.active {
