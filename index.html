@@ -562,25 +562,6 @@
     L.marker(startLatLng, { icon: startIcon }).addTo(map1).bindPopup("Start");
     L.marker([49.965792201057205, 16.97573241815665], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Istria"); //souřadnice restaurace + název
 
-    L.Routing.control({
-      waypoints: [
-        L.latLng(startLatLng),
-        L.latLng(49.965792201057205, 16.97573241815665) //souřadnice restaurace
-      ],
-      router: L.Routing.osrmv1({
-        serviceUrl: 'https://router.project-osrm.org/route/v1',
-        profile: 'foot'
-      }),
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: '#2f3b45', weight: 5 }]
-      }
-
-    }).addTo(map1);
-
     const map2 = L.map('map2').setView([49.96585802665727, 16.97147024907664], 14); //souřadnice restaurace
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
@@ -589,25 +570,6 @@
     L.marker(startLatLng, { icon: startIcon }).addTo(map2).bindPopup("Start");
     L.marker([49.96585802665727, 16.97147024907664], { icon: endIcon }).addTo(map2).bindPopup("Cakir's Burger"); //souřadnice restaurace + název
 
-    L.Routing.control({
-      waypoints: [
-        L.latLng(startLatLng),
-        L.latLng(49.96585802665727, 16.97147024907664) //souřadnice restaurace
-      ],
-      router: L.Routing.osrmv1({
-        serviceUrl: 'https://router.project-osrm.org/route/v1',
-        profile: 'foot'
-      }),
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: '#2f3b45', weight: 5 }]
-      }
-
-    }).addTo(map2);
-    
     const map3 = L.map('map3').setView([49.96638335083531, 16.973027405050953], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
@@ -615,24 +577,6 @@
 
     L.marker(startLatLng, { icon: startIcon }).addTo(map3).bindPopup("Start");
     L.marker([49.96638335083531, 16.973027405050953], { icon: endIcon }).addTo(map3).bindPopup("Bistro J&J");
-
-    L.Routing.control({
-      waypoints: [
-        L.latLng(startLatLng),
-        L.latLng(49.96638335083531, 16.973027405050953)
-      ],
-      router: L.Routing.osrmv1({
-        serviceUrl: 'https://router.project-osrm.org/route/v1',
-        profile: 'foot'
-      }),
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: '#2f3b45', weight: 5 }]
-      }
-    }).addTo(map3);
 
     const map4 = L.map('map4').setView([49.964280432703525, 16.98005109481759], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -642,24 +586,6 @@
     L.marker(startLatLng, { icon: startIcon }).addTo(map4).bindPopup("Start");
     L.marker([49.964280432703525, 16.98005109481759], { icon: endIcon }).addTo(map4).bindPopup("PHOčko");
 
-    L.Routing.control({
-      waypoints: [
-        L.latLng(startLatLng),
-        L.latLng(49.964280432703525, 16.98005109481759)
-      ],
-      router: L.Routing.osrmv1({
-        serviceUrl: 'https://router.project-osrm.org/route/v1',
-        profile: 'foot'
-      }),
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: '#2f3b45', weight: 5 }]
-      }
-    }).addTo(map4);
-
     const map5 = L.map('map5').setView([49.97054860372086, 16.974248772098605], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
@@ -667,24 +593,6 @@
 
     L.marker(startLatLng, { icon: startIcon }).addTo(map5).bindPopup("Start");
     L.marker([49.97054860372086, 16.974248772098605], { icon: endIcon }).addTo(map5).bindPopup("Hatze restaurace");
-
-    L.Routing.control({
-      waypoints: [
-        L.latLng(startLatLng),
-        L.latLng(49.97054860372086, 16.974248772098605)
-      ],
-      router: L.Routing.osrmv1({
-        serviceUrl: 'https://router.project-osrm.org/route/v1',
-        profile: 'foot'
-      }),
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: '#2f3b45', weight: 5 }]
-      }
-    }).addTo(map5);
 
     const map6 = L.map('map6').setView([49.966061087457035, 16.97695989772433], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -694,24 +602,6 @@
     L.marker(startLatLng, { icon: startIcon }).addTo(map6).bindPopup("Start");
     L.marker([49.966061087457035, 16.97695989772433], { icon: endIcon }).addTo(map6).bindPopup("Můj sendvič");
 
-    L.Routing.control({
-      waypoints: [
-        L.latLng(startLatLng),
-        L.latLng(49.966061087457035, 16.97695989772433)
-      ],
-      router: L.Routing.osrmv1({
-        serviceUrl: 'https://router.project-osrm.org/route/v1',
-        profile: 'foot'
-      }),
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: '#2f3b45', weight: 5 }]
-      }
-    }).addTo(map6);
-
     const map7 = L.map('map7').setView([49.96433499813746, 16.972900468888895], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
@@ -719,24 +609,6 @@
 
     L.marker(startLatLng, { icon: startIcon }).addTo(map7).bindPopup("Start");
     L.marker([49.96433499813746, 16.972900468888895], { icon: endIcon }).addTo(map7).bindPopup("Vosíme");
-
-    L.Routing.control({
-      waypoints: [
-        L.latLng(startLatLng),
-        L.latLng(49.96433499813746, 16.972900468888895)
-      ],
-      router: L.Routing.osrmv1({
-        serviceUrl: 'https://router.project-osrm.org/route/v1',
-        profile: 'foot'
-      }),
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: '#2f3b45', weight: 5 }]
-      }
-    }).addTo(map7);
 
     const map8 = L.map('map8').setView([49.96738159848841, 16.984933692581173], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -746,24 +618,6 @@
     L.marker(startLatLng, { icon: startIcon }).addTo(map8).bindPopup("Start");
     L.marker([49.96738159848841, 16.984933692581173], { icon: endIcon }).addTo(map8).bindPopup("Pizzerie Palermo");
 
-    L.Routing.control({
-      waypoints: [
-        L.latLng(startLatLng),
-        L.latLng(49.96738159848841, 16.984933692581173)
-      ],
-      router: L.Routing.osrmv1({
-        serviceUrl: 'https://router.project-osrm.org/route/v1',
-        profile: 'foot'
-      }),
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: '#2f3b45', weight: 5 }]
-      }
-    }).addTo(map8);
-
     const map9 = L.map('map9').setView([49.9648730582568, 16.974479729728472], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
@@ -772,36 +626,12 @@
     L.marker(startLatLng, { icon: startIcon }).addTo(map9).bindPopup("Start");
     L.marker([49.9648730582568, 16.974479729728472], { icon: endIcon }).addTo(map9).bindPopup("Vojtova pizza");
 
-    L.Routing.control({
-      waypoints: [
-        L.latLng(startLatLng),
-        L.latLng(49.9648730582568, 16.974479729728472)
-      ],
-      router: L.Routing.osrmv1({
-        serviceUrl: 'https://router.project-osrm.org/route/v1',
-        profile: 'foot'
-      }),
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: '#2f3b45', weight: 5 }]
-      }
-    }).addTo(map9);
-
     const map10 = L.map('map10').setView([49.96636169610501, 16.97044508780298], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map10);
     L.marker(startLatLng, { icon: startIcon }).addTo(map10).bindPopup("Start");
     L.marker([49.96636169610501, 16.97044508780298], { icon: endIcon }).addTo(map10).bindPopup("Pikola");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.96636169610501, 16.97044508780298)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map10);
 
     const map11 = L.map('map11').setView([49.96569760858843, 16.97156334753326], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -809,12 +639,6 @@
     }).addTo(map11);
     L.marker(startLatLng, { icon: startIcon }).addTo(map11).bindPopup("Start");
     L.marker([49.96569760858843, 16.97156334753326], { icon: endIcon }).addTo(map11).bindPopup("Úzká");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.96569760858843, 16.97156334753326)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map11);
 
     const map12 = L.map('map12').setView([49.965368012658, 16.97163228538239], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -822,12 +646,6 @@
     }).addTo(map12);
     L.marker(startLatLng, { icon: startIcon }).addTo(map12).bindPopup("Start");
     L.marker([49.965368012658, 16.97163228538239], { icon: endIcon }).addTo(map12).bindPopup("Speed Pizza");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.965368012658, 16.97163228538239)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map12);
 
     const map13 = L.map('map13').setView([49.96583219555506, 16.977264941900554], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -835,12 +653,6 @@
     }).addTo(map13);
     L.marker(startLatLng, { icon: startIcon }).addTo(map13).bindPopup("Start");
     L.marker([49.96583219555506, 16.977264941900554], { icon: endIcon }).addTo(map13).bindPopup("Pizza pasáž (JVS)");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.96583219555506, 16.977264941900554)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map13);
 
     const map14 = L.map('map14').setView([49.957851946132344, 16.973219770248033], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -848,25 +660,13 @@
     }).addTo(map14);
     L.marker(startLatLng, { icon: startIcon }).addTo(map14).bindPopup("Start");
     L.marker([49.957851946132344, 16.973219770248033], { icon: endIcon }).addTo(map14).bindPopup("UFO burger");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.957851946132344, 16.973219770248033)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map14);
-
+  
     const map15 = L.map('map15').setView([49.965923108041466, 16.977268026559468], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map15);
     L.marker(startLatLng, { icon: startIcon }).addTo(map15).bindPopup("Start");
     L.marker([49.965923108041466, 16.977268026559468], { icon: endIcon }).addTo(map15).bindPopup("Sushi bar (Dakota SUSHI)");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.965923108041466, 16.977268026559468)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map15);
 
     const map16 = L.map('map16').setView([49.96585999277659, 16.98289561257995], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -874,12 +674,6 @@
     }).addTo(map16);
     L.marker(startLatLng, { icon: startIcon }).addTo(map16).bindPopup("Start");
     L.marker([49.96585999277659, 16.98289561257995], { icon: endIcon }).addTo(map16).bindPopup("Red rat");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.96585999277659, 16.98289561257995)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map16);
 
     const map17 = L.map('map17').setView([49.965163502893816, 16.970945495877466], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -887,12 +681,6 @@
     }).addTo(map17);
     L.marker(startLatLng, { icon: startIcon }).addTo(map17).bindPopup("Start");
     L.marker([49.965163502893816, 16.970945495877466], { icon: endIcon }).addTo(map17).bindPopup("Mr. India");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.965163502893816, 16.970945495877466)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map17);
 
     const map18 = L.map('map18').setView([49.96578529826101, 16.97092782840618], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -900,12 +688,6 @@
     }).addTo(map18);
     L.marker(startLatLng, { icon: startIcon }).addTo(map18).bindPopup("Start");
     L.marker([49.96578529826101, 16.97092782840618], { icon: endIcon }).addTo(map18).bindPopup("Šumpercana");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.96578529826101, 16.97092782840618)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map18);
 
     const map19 = L.map('map19').setView([49.96017310179614, 16.989395731391244], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -913,100 +695,113 @@
     }).addTo(map19);
     L.marker(startLatLng, { icon: startIcon }).addTo(map19).bindPopup("Start");
     L.marker([49.96017310179614, 16.989395731391244], { icon: endIcon }).addTo(map19).bindPopup("Benátky");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.96017310179614, 16.989395731391244)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map19);
-
+  
     const map20 = L.map('map20').setView([49.96727499270005, 16.972331782383314], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map20);
     L.marker(startLatLng, { icon: startIcon }).addTo(map20).bindPopup("Start");
     L.marker([49.96727499270005, 16.972331782383314], { icon: endIcon }).addTo(map20).bindPopup("İstanbul Kebab");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.96727499270005, 16.972331782383314)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map20);
-
+   
     const map21 = L.map('map21').setView([49.964638299880065, 16.975305804827542], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map21);
     L.marker(startLatLng, { icon: startIcon }).addTo(map21).bindPopup("Start");
     L.marker([49.964638299880065, 16.975305804827542], { icon: endIcon }).addTo(map21).bindPopup("Kurdish Kebab");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.964638299880065, 16.975305804827542)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map21);
-
+   
     const map22 = L.map('map22').setView([49.964058575943355, 16.977312097018523], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map22);
     L.marker(startLatLng, { icon: startIcon }).addTo(map22).bindPopup("Start");
     L.marker([49.964058575943355, 16.977312097018523], { icon: endIcon }).addTo(map22).bindPopup("Restaurace");
-    L.Routing.control({
-      waypoints: [L.latLng(startLatLng), L.latLng(49.964058575943355, 16.977312097018523)],
-      router: L.Routing.osrmv1({ serviceUrl: 'https://router.project-osrm.org/route/v1', profile: 'foot' }),
-      routeWhileDragging: false, show: false, addWaypoints: false, createMarker: () => null,
-      lineOptions: { styles: [{ color: '#2f3b45', weight: 5 }] }
-    }).addTo(map22);
-
+   
     function toggleFullscreen(button, mapId) {
       const container = button.parentElement;
       const isFullscreen = container.classList.toggle("fullscreen");
 
       document.querySelectorAll(".leaflet-control-container").forEach(el => {
         const parentMap = el.closest(".card-map");
-        if (parentMap !== container && isFullscreen) {
-          el.style.display = "none";
-        } else {
-          el.style.display = "";
-        }
+        el.style.display = (parentMap !== container && isFullscreen) ? "none" : "";
       });
 
       document.querySelectorAll(".fullscreen-button").forEach(btn => {
         const parentMap = btn.closest(".card-map");
-        if (parentMap !== container && isFullscreen) {
-          btn.style.display = "none";
-        } else {
-          btn.style.display = "";
-        }
+        btn.style.display = (parentMap !== container && isFullscreen) ? "none" : "";
       });
 
+     
+    }
+    function addRouteOnceWhenVisible(map, el, from, to) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            L.Routing.control({
+              waypoints: [L.latLng(from), L.latLng(to)],
+              router: L.Routing.osrmv1({
+                serviceUrl: 'https://router.project-osrm.org/route/v1',
+                profile: 'foot'
+              }),
+              routeWhileDragging: false,
+              show: false,
+              addWaypoints: false,
+              createMarker: () => null,
+              lineOptions: {
+                styles: [{ color: '#2f3b45', weight: 5 }]
+              }
+            }).addTo(map);
+
+            obs.disconnect(); // přidat trasu jen jednou
+          }
+        });
+      }, { threshold: 0.1 });
+
+      observer.observe(el);
+    }
+
+    
+    const routeConfigs = [
+      { map: map1, id: 'map1', lat: 49.965792201057205, lng: 16.97573241815665 },
+      { map: map2, id: 'map2', lat: 49.96585802665727, lng: 16.97147024907664 },
+      { map: map3, id: 'map3', lat: 49.96638335083531, lng: 16.973027405050953 },
+      { map: map4, id: 'map4', lat: 49.964280432703525, lng: 16.98005109481759 },
+      { map: map5, id: 'map5', lat: 49.97054860372086, lng: 16.974248772098605 },
+      { map: map6, id: 'map6', lat: 49.96396026099778, lng: 16.976148896169684 },
+      { map: map7, id: 'map7', lat: 49.96373764941263, lng: 16.97677337235151 },
+      { map: map8, id: 'map8', lat: 49.9640758650662, lng: 16.97831737000626 },
+      { map: map9, id: 'map9', lat: 49.9648730582568, lng: 16.974479729728472 },
+      { map: map10, id: 'map10', lat: 49.96574719516757, lng: 16.973064842272775 },
+      { map: map11, id: 'map11', lat: 49.96498617582337, lng: 16.974650314417037 },
+      { map: map12, id: 'map12', lat: 49.963607700000006, lng: 16.9708657 },
+      { map: map13, id: 'map13', lat: 49.9642356, lng: 16.9709015 },
+      { map: map14, id: 'map14', lat: 49.96497409999999, lng: 16.9752234 },
+      { map: map15, id: 'map15', lat: 49.9636379, lng: 16.9705509 },
+      { map: map16, id: 'map16', lat: 49.9629647, lng: 16.9744536 },
+      { map: map17, id: 'map17', lat: 49.9618575, lng: 16.9714234 },
+      { map: map18, id: 'map18', lat: 49.9616538, lng: 16.9742612 },
+      { map: map19, id: 'map19', lat: 49.962176399999996, lng: 16.9702287 },
+      { map: map20, id: 'map20', lat: 49.9652819, lng: 16.9702157 },
+      { map: map21, id: 'map21', lat: 49.960542899999995, lng: 16.9747237 },
+      { map: map22, id: 'map22', lat: 49.964209700000006, lng: 16.9740735 }
+    ];
+
+    // Spusť pozorování pro každou mapu
+    routeConfigs.forEach(({ map, id, lat, lng }) => {
+      const el = document.getElementById(id);
+      if (el && map) {
+        addRouteOnceWhenVisible(map, el, startLatLng, [lat, lng]);
+      }
+    });
       setTimeout(() => {
-        const map = mapId === 'map1' ? map1 :
-            mapId === 'map2' ? map2 :
-            mapId === 'map3' ? map3 :
-            mapId === 'map4' ? map4 :
-            mapId === 'map5' ? map5 :
-            mapId === 'map6' ? map6 :
-            mapId === 'map7' ? map7 :
-            mapId === 'map8' ? map8 :
-            mapId === 'map9' ? map9 : 
-            mapId === 'map10' ? map10 :
-            mapId === 'map11' ? map11 :
-            mapId === 'map12' ? map12 :
-            mapId === 'map13' ? map13 :
-            mapId === 'map14' ? map14 :
-            mapId === 'map15' ? map15 :
-            mapId === 'map16' ? map16 :
-            mapId === 'map17' ? map17 :
-            mapId === 'map18' ? map18 :
-            mapId === 'map19' ? map19 :
-            mapId === 'map20' ? map20 : 
-            mapId === 'map21' ? map21 :
-            mapId === 'map22' ? map22 : null;
+        const mapLookup = {
+          map1, map2, map3, map4, map5, map6, map7, map8, map9, map10, map11,
+          map12, map13, map14, map15, map16, map17, map18, map19, map20, map21, map22
+        };
+        const map = mapLookup[mapId];
         if (map) map.invalidateSize();
       }, 300);
-    }
+    
     const schedule = [
       { start: "09:00", end: "10:10", name: "Registrace" },
       { start: "10:15", end: "10:25", name: "Přivítání" },
