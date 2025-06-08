@@ -31,6 +31,28 @@
     </div>
 
   <div class="main-content">
+    <div class="restaurant-card" data-category="mexická asijská americká">
+      <div class="card-top">
+        <div class="card-text">
+          <h2>Bistro J&amp;J</h2>
+          <p>Mexická, Asijská, Americká</p>
+          <p><strong>Adresa:</strong> <a href="https://maps.google.com/?q=Gen. Svobody+244/9,+Šumperk" target="_blank">Gen. Svobody 244/9</a></p>
+          <p><strong>Web:</strong> <a href="https://www.bistrojjsumperk.cz/" target="_blank">bistrojjsumperk.cz</a></p>
+          <p><strong>Tel:</strong> <a href="https://www.bistrojjsumperk.cz/" target="_blank">bistrojjsumperk.cz</a></p>
+          <p><strong>Cena:</strong> Kč 200–300</p>
+        </div>
+        <div class="card-description">
+          <p class="restaurant-description">
+            J&amp;J je místo, kde se dobře najíte, pokud vám chutnají exotičtější kombinace, mexická, asijská a americká kuchyně. V nabídce najdete různé druhy poke bowls, tacos či burgerů. V nabídce ale naleznete i lososa či steaky. Je možno sedět jak vevnitř, tak venku na zahrádce – čeká vás opravdu krásné a příjemné prostředí.
+          </p>
+        </div>
+      </div>
+      <div class="card-map" id="map3-container">
+        <button class="fullscreen-button" onclick="toggleFullscreen(this, 'map3')">⛶</button>
+        <div id="map3" style="height: 100%;"></div>
+      </div>
+    </div>
+
     <div class="restaurant-card" data-category="pizza těstoviny"> <!--kategorie-->
       <div class="card-top">
         <div class="card-text">
@@ -169,6 +191,32 @@
       }
 
     }).addTo(map2);
+    
+    const map3 = L.map('map3').setView([49.96638335083531, 16.973027405050953], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map3);
+
+    L.marker(startLatLng, { icon: startIcon }).addTo(map3).bindPopup("Start");
+    L.marker([49.96638335083531, 16.973027405050953], { icon: endIcon }).addTo(map3).bindPopup("Bistro J&J");
+
+    L.Routing.control({
+      waypoints: [
+        L.latLng(startLatLng),
+        L.latLng(49.96638335083531, 16.973027405050953)
+      ],
+      router: L.Routing.osrmv1({
+        serviceUrl: 'https://router.project-osrm.org/route/v1',
+        profile: 'foot'
+      }),
+      routeWhileDragging: false,
+      show: false,
+      addWaypoints: false,
+      createMarker: () => null,
+      lineOptions: {
+        styles: [{ color: '#2f3b45', weight: 5 }]
+      }
+    }).addTo(map3);
 
     function toggleFullscreen(button, mapId) {
       const container = button.parentElement;
@@ -193,7 +241,7 @@
       });
 
       setTimeout(() => {
-        const map = mapId === 'map1' ? map1 : mapId === 'map2' ? map2 : null;
+        const map = mapId === 'map1' ? map1 : mapId === 'map2' ? map2 : mapId === 'map3' ? map3 : null;
         if (map) map.invalidateSize();
       }, 300);
     }
