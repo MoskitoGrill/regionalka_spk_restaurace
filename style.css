@@ -352,3 +352,38 @@ footer {
 .program-bar:hover {
   background-color: #1d262c;
 }
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem; /* Globální zmenšení písma */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+  }
+
+  .card-text h2 {
+    font-size: 1.1rem;
+  }
+
+  .filter-button,
+  .vertical-filter-button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .restaurant-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .footer-left,
+  .footer-right,
+  .footer-right a {
+    font-size: 0.85rem;
+  }
+
+  .program-bar {
+    font-size: 1rem;
+  }
+}
