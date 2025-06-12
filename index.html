@@ -532,7 +532,7 @@
     });
     });
     
-    const startLatLng = [49.963984, 16.974440];//výchozí bod
+    const startLatLng = [49.963977023968376, 16.974466658578336];//výchozí bod
     const startIcon = L.icon({
         iconUrl: 'vychozi_bod.png',
         iconSize: [35, 41],
@@ -752,7 +752,7 @@
               }
             }).addTo(map);
 
-            obs.disconnect(); // přidat trasu jen jednou
+            obs.disconnect(); 
           }
         });
       }, { threshold: 0.1 });
