@@ -974,6 +974,38 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map11);
+    
+    const geojsonRoute11 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974837760542414, 49.96407674161466],
+              [16.97413528478765, 49.9650600679598],
+              [16.973764165522653, 49.965091329450416],
+              [16.97314563341152, 49.9651595362692],
+              [16.972838693672657, 49.96537091300132],
+              [16.971795118661674, 49.965223157609756],
+              [16.971585459542354, 49.96565030355046],
+              [16.97156334753326, 49.96569760858843]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute11, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map11); 
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map11).bindPopup("Start");
     L.marker([49.96569760858843, 16.97156334753326], { icon: endIcon }).addTo(map11).bindPopup("Úzká");
 
@@ -981,6 +1013,41 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map12);
+
+    const geojsonRoute12 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.97483442951119, 49.96408313539777],
+              [16.974191079040253, 49.96500839625705],
+              [16.9738611307489, 49.96498070732537],
+              [16.97372964224749, 49.965073343271285],
+              [16.97319161030606, 49.96510682823774],
+              [16.973022553661536, 49.96519342248769],
+              [16.9728910651601, 49.96532230666412],
+              [16.972685457185378, 49.96534662798311],
+              [16.97181512853382, 49.965215730055235],
+              [16.97174572709781, 49.965352121524035],
+              [16.97163228538239, 49.965368012658]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute12, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map12);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map12).bindPopup("Start");
     L.marker([49.965368012658, 16.97163228538239], { icon: endIcon }).addTo(map12).bindPopup("Speed Pizza");
 
@@ -988,6 +1055,39 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map13);
+
+    const geojsonRoute13 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974831987707148, 49.96408403412724],
+              [16.974089764996563, 49.9651027975859],
+              [16.97415001129616, 49.96521629036272],
+              [16.97475613602245, 49.9653860492717],
+              [16.97490890342374, 49.9654635561067],
+              [16.975291634745133, 49.96572085954844],
+              [16.97697224680229, 49.96578873811731],
+              [16.97710884750967, 49.96580562870338],
+              [16.977264941900554, 49.96583219555506]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute13, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map13);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map13).bindPopup("Start");
     L.marker([49.96583219555506, 16.977264941900554], { icon: endIcon }).addTo(map13).bindPopup("Pizza pasáž (JVS)");
 
@@ -995,6 +1095,51 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map14);
+
+    const geojsonRoute14 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974833274204798, 49.96408815928655],
+              [16.975123412362734, 49.963578796729365],
+              [16.975029341646575, 49.96340902304232],
+              [16.97511296009401, 49.96330648617368],
+              [16.97471519340067, 49.96317331926963],
+              [16.973869096362364, 49.962487185474856],
+              [16.97378266570402, 49.962203968527405],
+              [16.973904386863154, 49.961860285721286],
+              [16.97375544156236, 49.96184347587234],
+              [16.974060784652295, 49.96105511963532],
+              [16.974619717414242, 49.95989736290875],
+              [16.97477337855102, 49.95949566722484],
+              [16.974771815500645, 49.959316131506995],
+              [16.974743940067327, 49.95922232729242],
+              [16.974949789420037, 49.958989195437255],
+              [16.974936923835855, 49.95888711367806],
+              [16.97420336011959, 49.95862294057309],
+              [16.97420336011959, 49.95857879680048],
+              [16.973724068635164, 49.95841217343238],
+              [16.973632065774837, 49.958286865833344],
+              [16.973219770248033, 49.957851946132344]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute14, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map14);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map14).bindPopup("Start");
     L.marker([49.957851946132344, 16.973219770248033], { icon: endIcon }).addTo(map14).bindPopup("UFO burger");
   
@@ -1002,6 +1147,39 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map15);
+
+    const geojsonRoute15 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974831987707148, 49.96408403412724],
+              [16.974089764996563, 49.9651027975859],
+              [16.97415001129616, 49.96521629036272],
+              [16.97475613602245, 49.9653860492717],
+              [16.97490890342374, 49.9654635561067],
+              [16.975291634745133, 49.96572085954844],
+              [16.97697224680229, 49.96578873811731],
+              [16.97710884750967, 49.96580562870338],
+              [16.977268026559468, 49.965923108041466]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute15, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map15);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map15).bindPopup("Start");
     L.marker([49.965923108041466, 16.977268026559468], { icon: endIcon }).addTo(map15).bindPopup("Sushi bar (Dakota SUSHI)");
 
@@ -1009,6 +1187,46 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map16);
+
+    const geojsonRoute16 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974840436535374, 49.9640800654349],
+              [16.974070208346546, 49.965119041817445],
+              [16.974186185898617, 49.96522077308279],
+              [16.974743300165358, 49.96538787473335],
+              [16.97491990234758, 49.965470954819466],
+              [16.975418078652723, 49.9657269762223],
+              [16.976997253741814, 49.965792862595066],
+              [16.977629858573835, 49.96579794909212],
+              [16.978061728314344, 49.96575187739933],
+              [16.97939329584969, 49.96592747731728],
+              [16.97991002125275, 49.96592381429505],
+              [16.98111314910713, 49.96605469715578],
+              [16.982348549597532, 49.96609841753934],
+              [16.983280035037666, 49.96613910935588],
+              [16.983417099418205, 49.96587461266384],
+              [16.98289561257995, 49.96585999277659]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute16, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map16);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map16).bindPopup("Start");
     L.marker([49.96585999277659, 16.98289561257995], { icon: endIcon }).addTo(map16).bindPopup("Red rat");
 
@@ -1016,20 +1234,124 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map17);
+    
+    const geojsonRoute17 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974848325532065, 49.9640802632473],
+              [16.974178261206532, 49.96500432407831],
+              [16.97387093002331, 49.964973434624625],
+              [16.97371086169875, 49.965072280805686],
+              [16.973202693410173, 49.965106359810164],
+              [16.97283773762973, 49.96534523707308],
+              [16.97112968356285, 49.965079649288526],
+              [16.970945495877466, 49.965163502893816]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute17, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map17);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map17).bindPopup("Start");
     L.marker([49.965163502893816, 16.970945495877466], { icon: endIcon }).addTo(map17).bindPopup("Mr. India");
 
-    const map18 = L.map('map18').setView([49.96578529826101, 16.97092782840618], 14);
+    const map18 = L.map('map18').setView([49.965645671508504, 16.97084628723853], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map18);
+
+    const geojsonRoute18 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.97480978678297, 49.964090225408086],
+              [16.974162350946898, 49.965017133239854],
+              [16.973875750589002, 49.964983888491986],
+              [16.973687815926894, 49.96507153368651],
+              [16.973119313576575, 49.96516220096143],
+              [16.972828014851842, 49.96536771281842],
+              [16.97270115895472, 49.96578780050277],
+              [16.97200989094489, 49.96601359862913],
+              [16.97084628723853, 49.965645671508504]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute18, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map18);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map18).bindPopup("Start");
-    L.marker([49.96578529826101, 16.97092782840618], { icon: endIcon }).addTo(map18).bindPopup("Šumpercana");
+    L.marker([49.965645671508504, 16.97084628723853], { icon: endIcon }).addTo(map18).bindPopup("Šumpercana");
 
     const map19 = L.map('map19').setView([49.96017310179614, 16.989395731391244], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map19);
+
+    const geojsonRoute19 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974812328584278, 49.964100972875144],
+              [16.975283465130218, 49.96346158492162],
+              [16.976750075171196, 49.96396950993932],
+              [16.977565821168156, 49.963062493063376],
+              [16.97789902418836, 49.96278618882096],
+              [16.978639138109685, 49.96248731956558],
+              [16.97907672371082, 49.962473418624796],
+              [16.981813825098556, 49.96338690542069],
+              [16.982742328527394, 49.962463087947725],
+              [16.986468805687025, 49.96355996282219],
+              [16.98750845804588, 49.96203319498221],
+              [16.988509403239618, 49.96044259923059],
+              [16.989083519305865, 49.96025762910904],
+              [16.989395731391244, 49.96017310179614]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute19, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map19);
+
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map19).bindPopup("Start");
     L.marker([49.96017310179614, 16.989395731391244], { icon: endIcon }).addTo(map19).bindPopup("Benátky");
   
@@ -1037,6 +1359,38 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map20);
+
+    const geojsonRoute20 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.97484605398259, 49.96408250390644],
+              [16.974062519930726, 49.965124760650326],
+              [16.973837534147492, 49.96560180802348],
+              [16.973812535726495, 49.96590465025045],
+              [16.973371730131532, 49.96631431851225],
+              [16.97278591558046, 49.9666750070613],
+              [16.972340110417576, 49.96709308031464],
+              [16.972331782383314, 49.96727499270005]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute20, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map20);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map20).bindPopup("Start");
     L.marker([49.96727499270005, 16.972331782383314], { icon: endIcon }).addTo(map20).bindPopup("İstanbul Kebab");
    
@@ -1044,6 +1398,34 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map21);
+
+    const geojsonRoute21 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974853984187945, 49.96407946608045],
+              [16.974610717426287, 49.96440545249871],
+              [16.974926304968108, 49.96454195044416],
+              [16.975305804827542, 49.964638299880065]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute21, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map21);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map21).bindPopup("Start");
     L.marker([49.964638299880065, 16.975305804827542], { icon: endIcon }).addTo(map21).bindPopup("Kurdish Kebab");
    
@@ -1051,6 +1433,34 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map22);
+
+    const geojsonRoute22 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974837596226394, 49.96408761052629],
+              [16.97533531553671, 49.96343342914136],
+              [16.977042811282075, 49.9640962108829],
+              [16.977312097018523, 49.964058575943355]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute22, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map22);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map22).bindPopup("Start");
     L.marker([49.964058575943355, 16.977312097018523], { icon: endIcon }).addTo(map22).bindPopup("Restaurace");
    
