@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurace ve městě</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -559,20 +557,115 @@
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map1);
 
+    const geojsonRoute1 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974816688287007, 49.96409814518836],
+              [16.97407120386589, 49.96512481412077],
+              [16.974234404123365, 49.965235455065994],
+              [16.97474356942837, 49.965380996346255],
+              [16.97496131855266, 49.96549995738329],
+              [16.975146256165715, 49.965716772709925],
+              [16.97570405186758, 49.96573787857474],
+              [16.97573241815665, 49.965792201057205]
+            ]
+          }
+        }
+      ]
+    };
+
+    // Přidání GeoJSON trasy do mapy 1
+    L.geoJSON(geojsonRoute1, {
+      style: {
+        color: "#2f3b45",
+        weight: 4
+      }
+    }).addTo(map1);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map1).bindPopup("Start");
     L.marker([49.965792201057205, 16.97573241815665], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Istria"); //souřadnice restaurace + název
 
-    const map2 = L.map('map2').setView([49.96585802665727, 16.97147024907664], 14); //souřadnice restaurace
+    const map2 = L.map('map2').setView([49.96571682415065, 16.97150735500601], 14); 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map2);
 
+    const geojsonRoute2 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974837760542414, 49.96407674161466],
+              [16.97413528478765, 49.9650600679598],
+              [16.973764165522653, 49.965091329450416],
+              [16.97314563341152, 49.9651595362692],
+              [16.972838693672657, 49.96537091300132],
+              [16.971795118661674, 49.965223157609756],
+              [16.971585459542354, 49.96565030355046],
+              [16.97150735500601, 49.96571682415065] 
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute2, {
+      style: {
+        color: "#2f3b45",
+        weight: 4
+      }
+    }).addTo(map2);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map2).bindPopup("Start");
-    L.marker([49.96585802665727, 16.97147024907664], { icon: endIcon }).addTo(map2).bindPopup("Cakir's Burger"); //souřadnice restaurace + název
+    L.marker([49.96571682415065, 16.97150735500601], { icon: endIcon }).addTo(map2).bindPopup("Cakir's Burger");
+
 
     const map3 = L.map('map3').setView([49.96638335083531, 16.973027405050953], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map3);
+
+    const geojsonRoute3 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.97483305672074, 49.96407323592874],
+              [16.97413147838182, 49.965042460262254],
+              [16.97398824430863, 49.965119322316355],
+              [16.973845091242993, 49.9656209650758],
+              [16.973836424924485, 49.96588269817025],
+              [16.97352558228033, 49.96620153938272],
+              [16.97314238840616, 49.96643636061839],
+              [16.973027405050953, 49.96638335083531]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute3, {
+      style: {
+        color: "#2f3b45", 
+        weight: 4
+      }
     }).addTo(map3);
 
     L.marker(startLatLng, { icon: startIcon }).addTo(map3).bindPopup("Start");
@@ -583,6 +676,37 @@
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map4);
 
+    const geojsonRoute4 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974826265311577, 49.96408874098597],
+              [16.975329194029086, 49.9634441411753],
+              [16.978385521519385, 49.96454103529334],
+              [16.978750997795316, 49.96415480860736],
+              [16.979686626313736, 49.96451146341485],
+              [16.97987503661352, 49.96456553597267],
+              [16.979985184173728, 49.96451892170231],
+              [16.98005109481759, 49.964280432703525]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute4, {
+      style: {
+        color: "#314e7b", 
+        weight: 4
+      }
+    }).addTo(map4); 
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map4).bindPopup("Start");
     L.marker([49.964280432703525, 16.98005109481759], { icon: endIcon }).addTo(map4).bindPopup("PHOčko");
 
@@ -590,6 +714,51 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map5);
+    
+    const geojsonRoute5 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974848517484247, 49.96408083431771],
+              [16.97409726055338, 49.96508931177871],
+              [16.973959639173074, 49.96520924945469],
+              [16.97383089659084, 49.96561760644386],
+              [16.97383089659084, 49.965903168713425],
+              [16.97364859370191, 49.9660956022862],
+              [16.975075547618502, 49.96685231101739],
+              [16.975204290218983, 49.96691513325851],
+              [16.975079987035144, 49.96700079980769],
+              [16.97498605586017, 49.96716946512595],
+              [16.974883949674904, 49.96749785100246],
+              [16.974898072804365, 49.967840887943794],
+              [16.975049012382414, 49.96834916412956],
+              [16.97472493518552, 49.9683814904611],
+              [16.974787086777496, 49.96926667715175],
+              [16.97489258395379, 49.96942124259937],
+              [16.975025765935726, 49.96947549527354],
+              [16.974737204974645, 49.96959827741523],
+              [16.974888622444666, 49.9697424231299],
+              [16.97407282076034, 49.97035277761063],
+              [16.97415790746163, 49.970501564773286],
+              [16.974248772098605, 49.97054860372086]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute5, {
+      style: {
+        color: "#314e7b", 
+        weight: 4
+      }
+    }).addTo(map5); 
 
     L.marker(startLatLng, { icon: startIcon }).addTo(map5).bindPopup("Start");
     L.marker([49.97054860372086, 16.974248772098605], { icon: endIcon }).addTo(map5).bindPopup("Hatze restaurace");
@@ -599,6 +768,38 @@
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map6);
 
+    const geojsonRoute6 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974834283514213, 49.96407923964324],
+              [16.974094087918104, 49.965108060312986],
+              [16.97418533839911, 49.965221052359425],
+              [16.974733746597423, 49.96538047262797],
+              [16.974907122509308, 49.96545971338253],
+              [16.975135348579727, 49.96571542708023],
+              [16.977009066326787, 49.96579313497364],
+              [16.9771087858592, 49.96580654593461],
+              [16.97695989772433, 49.966061087457035]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute6, {
+      style: {
+        color: "#314e7b", 
+        weight: 4
+      }
+    }).addTo(map6); 
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map6).bindPopup("Start");
     L.marker([49.966061087457035, 16.97695989772433], { icon: endIcon }).addTo(map6).bindPopup("Můj sendvič");
 
@@ -606,6 +807,35 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map7);
+
+    const geojsonRoute7 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974855857673987, 49.964067426520955],
+              [16.974165883592462, 49.9650156826506],
+              [16.973869972783774, 49.96497645098046],
+              [16.97369321182606, 49.964584074715674],
+              [16.97315010706967, 49.96420879412261],
+              [16.972900468888895, 49.96433499813746]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute7, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map7); 
 
     L.marker(startLatLng, { icon: startIcon }).addTo(map7).bindPopup("Start");
     L.marker([49.96433499813746, 16.972900468888895], { icon: endIcon }).addTo(map7).bindPopup("Vosíme");
@@ -615,6 +845,49 @@
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map8);
 
+    const geojsonRoute8 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974851609843483, 49.964075709831604],
+              [16.974175534909648, 49.96501083644176],
+              [16.974053682078505, 49.965145978457],
+              [16.974888351480985, 49.965449498766645],
+              [16.975136258964056, 49.96571707715043],
+              [16.97658778580808, 49.96577809690092],
+              [16.97762308675297, 49.96581064895096],
+              [16.977980241603603, 49.96574307892382],
+              [16.979395194430793, 49.96594580467362],
+              [16.979384930265553, 49.96601332494092],
+              [16.980682717152064, 49.966326644390165],
+              [16.98181271192209, 49.96674707472272],
+              [16.98294397411439, 49.96715971581037],
+              [16.983696986739517, 49.96739488688448],
+              [16.983853674920027, 49.96721960741766],
+              [16.984098925985393, 49.96715825945378],
+              [16.98441570861152, 49.9672458993783],
+              [16.98469904918926, 49.96719184848345],
+              [16.984746889035563, 49.967327577392695],
+              [16.984933692581173, 49.96738159848841]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute8, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map8); 
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map8).bindPopup("Start");
     L.marker([49.96738159848841, 16.984933692581173], { icon: endIcon }).addTo(map8).bindPopup("Pizzerie Palermo");
 
@@ -623,6 +896,32 @@
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map9);
 
+    const geojsonRoute9 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974835186648562, 49.96407966222185],
+              [16.974328025290646, 49.964806381751146],
+              [16.974479729728472, 49.9648730582568]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute9, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map9); 
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map9).bindPopup("Start");
     L.marker([49.9648730582568, 16.974479729728472], { icon: endIcon }).addTo(map9).bindPopup("Vojtova pizza");
 
@@ -630,6 +929,44 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map10);
+
+    const geojsonRoute10 = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [16.974466658578336, 49.963977023968376],
+              [16.974837933744396, 49.964091487941914],
+              [16.974170837359026, 49.965000748276765],
+              [16.973862614644048, 49.96497787143264],
+              [16.973718149602377, 49.9650753623979],
+              [16.973184687212097, 49.96512111598224],
+              [16.972817191349634, 49.96535750857814],
+              [16.972682837858656, 49.96579216332739],
+              [16.9719985427825, 49.96601395206906],
+              [16.971824673558444, 49.96633422000218],
+              [16.971453225672747, 49.96634947080335],
+              [16.97116476082428, 49.96628592576806],
+              [16.970587166573978, 49.966181875821235],
+              [16.97049084503368, 49.96630936256338],
+              [16.97044508780298, 49.96636169610501]
+            ]
+          }
+        }
+      ]
+    };
+
+    L.geoJSON(geojsonRoute10, {
+      style: {
+        color: "#314e7b",
+        weight: 4
+      }
+    }).addTo(map10);
+
     L.marker(startLatLng, { icon: startIcon }).addTo(map10).bindPopup("Start");
     L.marker([49.96636169610501, 16.97044508780298], { icon: endIcon }).addTo(map10).bindPopup("Pikola");
 
