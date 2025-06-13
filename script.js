@@ -38,6 +38,7 @@
 
 
     const map1 = L.map('map1');
+    window.map1 = map1;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map1);
@@ -83,6 +84,7 @@
     L.marker([49.965792201057205, 16.97573241815665], { icon: endIcon }).addTo(map1).bindPopup("Pizzeria Istria"); //souřadnice restaurace + název
 
     const map2 = L.map('map2');
+    window.map2 = map2;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map2);
@@ -130,6 +132,7 @@
 
 
     const map3 = L.map('map3');
+    window.map3 = map3;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map3);
@@ -175,6 +178,7 @@
     L.marker([49.96638335083531, 16.973027405050953], { icon: endIcon }).addTo(map3).bindPopup("Bistro J&J");
 
     const map4 = L.map('map4');
+    window.map4 = map4;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map4);
@@ -220,6 +224,7 @@
     L.marker([49.964280432703525, 16.98005109481759], { icon: endIcon }).addTo(map4).bindPopup("PHOčko");
 
     const map5 = L.map('map5');
+    window.map5 = map5;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map5);
@@ -279,6 +284,7 @@
     L.marker([49.97054860372086, 16.974248772098605], { icon: endIcon }).addTo(map5).bindPopup("Hatze restaurace");
 
     const map6 = L.map('map6');
+    window.map6 = map6;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map6);
@@ -325,6 +331,7 @@
     L.marker([49.966061087457035, 16.97695989772433], { icon: endIcon }).addTo(map6).bindPopup("Můj sendvič");
 
     const map7 = L.map('map7');
+    window.map7 = map7;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map7);
@@ -368,6 +375,7 @@
     L.marker([49.96433499813746, 16.972900468888895], { icon: endIcon }).addTo(map7).bindPopup("Vosíme");
 
     const map8 = L.map('map8');
+    window.map8 = map8;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map8);
@@ -425,6 +433,7 @@
     L.marker([49.96738159848841, 16.984933692581173], { icon: endIcon }).addTo(map8).bindPopup("Pizzerie Palermo");
 
     const map9 = L.map('map9');
+    window.map9 = map9;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map9);
@@ -465,6 +474,7 @@
     L.marker([49.9648730582568, 16.974479729728472], { icon: endIcon }).addTo(map9).bindPopup("Vojtova pizza");
 
     const map10 = L.map('map10');
+    window.map10 = map10;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map10);
@@ -516,6 +526,7 @@
     L.marker([49.96636169610501, 16.97044508780298], { icon: endIcon }).addTo(map10).bindPopup("Pikola");
 
     const map11 = L.map('map11');
+    window.map11 = map11;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map11);
@@ -561,6 +572,7 @@
     L.marker([49.96569760858843, 16.97156334753326], { icon: endIcon }).addTo(map11).bindPopup("Úzká");
 
     const map12 = L.map('map12');
+    window.map12 = map12;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map12);
@@ -609,6 +621,7 @@
     L.marker([49.965368012658, 16.97163228538239], { icon: endIcon }).addTo(map12).bindPopup("Speed Pizza");
 
     const map13 = L.map('map13');
+    window.map13 = map13;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map13);
@@ -655,6 +668,7 @@
     L.marker([49.96583219555506, 16.977264941900554], { icon: endIcon }).addTo(map13).bindPopup("Pizza pasáž (JVS)");
 
     const map14 = L.map('map14');
+    window.map14 = map14;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map14);
@@ -713,6 +727,7 @@
     L.marker([49.957851946132344, 16.973219770248033], { icon: endIcon }).addTo(map14).bindPopup("UFO burger");
   
     const map15 = L.map('map15');
+    window.map15 = map15;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map15);
@@ -759,6 +774,7 @@
     L.marker([49.965923108041466, 16.977268026559468], { icon: endIcon }).addTo(map15).bindPopup("Sushi bar (Dakota SUSHI)");
 
     const map16 = L.map('map16');
+    window.map16 = map16;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map16);
@@ -812,6 +828,7 @@
     L.marker([49.96585999277659, 16.98289561257995], { icon: endIcon }).addTo(map16).bindPopup("Red rat");
 
     const map17 = L.map('map17');
+    window.map17 = map17;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map17);
@@ -857,6 +874,7 @@
     L.marker([49.965163502893816, 16.970945495877466], { icon: endIcon }).addTo(map17).bindPopup("Mr. India");
 
     const map18 = L.map('map18');
+    window.map18 = map18;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map18);
@@ -903,6 +921,7 @@
     L.marker([49.965645671508504, 16.97084628723853], { icon: endIcon }).addTo(map18).bindPopup("Šumpercana");
 
     const map19 = L.map('map19');
+    window.map19 = map19;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map19);
@@ -955,6 +974,7 @@
     L.marker([49.96017310179614, 16.989395731391244], { icon: endIcon }).addTo(map19).bindPopup("Benátky");
   
     const map20 = L.map('map20');
+    window.map20 = map20;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map20);
@@ -1000,6 +1020,7 @@
     L.marker([49.96727499270005, 16.972331782383314], { icon: endIcon }).addTo(map20).bindPopup("İstanbul Kebab");
    
     const map21 = L.map('map21');
+    window.map21 = map21;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map21);
@@ -1041,6 +1062,7 @@
     L.marker([49.964638299880065, 16.975305804827542], { icon: endIcon }).addTo(map21).bindPopup("Kurdish Kebab");
    
     const map22 = L.map('map22');
+    window.map22 = map22;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(map22);
@@ -1082,22 +1104,31 @@
     L.marker([49.964058575943355, 16.977312097018523], { icon: endIcon }).addTo(map22).bindPopup("Restaurace");
    
     function toggleFullscreen(button, mapId) {
-      const container = button.parentElement;
-      const isFullscreen = container.classList.toggle("fullscreen");
+        const container = button.closest('.card-map');
+        const isFullscreen = container.classList.toggle("fullscreen");
 
-      document.querySelectorAll(".leaflet-control-container").forEach(el => {
-        const parentMap = el.closest(".card-map");
-        el.style.display = (parentMap !== container && isFullscreen) ? "none" : "";
-      });
+        document.body.classList.toggle("fullscreen-mode", isFullscreen);
 
-      document.querySelectorAll(".fullscreen-button").forEach(btn => {
-        const parentMap = btn.closest(".card-map");
-        btn.style.display = (parentMap !== container && isFullscreen) ? "none" : "";
-      });
+        setTimeout(() => {
+            const map = window[mapId];
+            if (map && typeof map.invalidateSize === "function") {
+                map.invalidateSize();
+                map.setView(map.getCenter());
 
-     
+                // bezpečně ještě jednou o něco později
+                setTimeout(() => map.invalidateSize(), 600);
+            } else {
+                console.warn("Map " + mapId + " not found or invalid.");
+            }
+            }, 300);
+
     }
-    
+
+    function toggleImageFullscreen(button) {
+        const container = button.parentElement;
+        container.classList.toggle('fullscreen');
+    }
+
     setTimeout(() => {
         [
             map1, map2, map3, map4, map5, map6, map7, map8, map9, map10,

@@ -2,9 +2,22 @@
   display: none !important;
 }
 
-html, body {
+body, html {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
 
 body {
   display: flex;
@@ -18,8 +31,12 @@ body {
 
 
 main {
-  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+
 
 :root {
   --primary-color: #2f3b45;
@@ -53,21 +70,28 @@ header::after {
 }
 
 footer {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 1.5rem;
+  position: relative;
+  z-index: 1000;
+  height: 70px; 
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  color: white;
   font-size: 0.95rem;
-  margin-top: 2rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  overflow: hidden; 
 }
+
 
 .footer-left {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  flex: 1; 
+  margin-left: 2rem;            
 }
 
 .footer-left a {
@@ -78,7 +102,10 @@ footer {
 .footer-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
+  flex: 1; 
+  margin-right: 2rem;            
 }
 
 .footer-right img {
@@ -227,6 +254,14 @@ footer {
   margin-top: 1rem;
 }
 
+.card-map img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .fullscreen-button {
   position: absolute;
   top: 5px;
@@ -253,6 +288,11 @@ footer {
   overflow: hidden;
 }
 
+.fullscreen > div {
+  width: 100%;
+  height: 100%;
+}
+
 .fullscreen .fullscreen-button {
   position: absolute;
   top: 10px;
@@ -262,6 +302,12 @@ footer {
 
 .fullscreen .leaflet-control-container {
   display: none !important;
+}
+
+.card-map.fullscreen,
+.card-map.fullscreen > div {
+  height: 100vh !important;
+  width: 100vw !important;
 }
 
 @media (min-width: 600px) {
@@ -300,10 +346,13 @@ footer {
   fill: white;
 }
 
-.main-content a {
-  color: var(--primary-color);
-  text-decoration: underline;
+.main-content {
+  flex-grow: 1;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
 }
+
 
 .main-content a:hover {
   text-decoration: none;
@@ -315,6 +364,8 @@ footer {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
+    position: relative;
+    z-index: 1;
   }
 
 .card-description {
@@ -425,3 +476,68 @@ footer {
 
 
 
+.image-card-map {
+  position: relative;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 160px; 
+}
+
+.image-card-map img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-fullscreen-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.image-card-map.fullscreen {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: white;
+  z-index: 9999;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.image-card-map.fullscreen img {
+  object-fit: contain;
+  height: 100%;
+}
+
+.image-card-map.fullscreen .custom-fullscreen-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10000;
+}
+
+body.fullscreen-mode > *:not(.fullscreen) {
+  display: none !important;
+}
+
+body.fullscreen-mode {
+  overflow: hidden;
+}
+
+.card-map.fullscreen .leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+}
