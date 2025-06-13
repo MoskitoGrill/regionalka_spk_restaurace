@@ -4,13 +4,18 @@
 
 html, body {
   height: 100%;
-  margin: 0;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: var(--text-dark);
 }
+
 
 main {
   flex: 1;
@@ -21,14 +26,6 @@ main {
   --text-light: white;
   --text-dark: #2f3b45;
   --font-main: 'Sans-serif';
-}
-
-body {
-  font-family: var(--font-main);
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  color: var(--text-dark);
 }
 
 header {
@@ -392,3 +389,39 @@ footer {
   height: 300px;
   position: relative;
 }
+
+#program-bar {
+  padding: 0;
+  margin: 0;
+}
+
+#currentProgram {
+  padding: 0.5rem 1rem;
+  background-color: #2f3b45;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+#program-progress-bar {
+  height: 5px;
+  background-color: #ddd;
+  width: 100%;
+  margin: 7px 0 0 0; 
+  padding: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+
+#program-progress-fill {
+  height: 100%;
+  background-color: #304352;
+  width: 50%; 
+  transition: width 1s linear;
+  border-radius: 0 999px 999px 0; 
+}
+
+
+

@@ -1138,7 +1138,6 @@
           next = schedule[i + 1] || null;
           break;
         } else if (currentMinutes < startMin) {
-          // mezera mezi bloky
           current = null;
           next = block;
           break;
@@ -1149,21 +1148,45 @@
     }
 
     function updateProgramBar() {
-      const { current, next } = getCurrentAndNextBlock(schedule);
-      const bar = document.getElementById("program-bar");
+        const { current, next } = getCurrentAndNextBlock(schedule);
+        const bar = document.getElementById("program-bar");
 
-      if (current && next) {
-        bar.textContent = `${current.start} - ${current.end} ${current.name} → ${next.start} - ${next.end} ${next.name}`;
-      } else if (current && !next) {
-        bar.textContent = `${current.start} - ${current.end} ${current.name}`;
-      } else if (!current && next) {
-        bar.textContent = `→ ${next.start} - ${next.end} ${next.name}`;
-      } else {
-        bar.textContent = "Program ukončen.";
-      }
+        if (current && next) {
+            bar.textContent = `${current.start} - ${current.end} ${current.name} → ${next.start} - ${next.end} ${next.name}`;
+        } else if (current && !next) {
+            bar.textContent = `${current.start} - ${current.end} ${current.name}`;
+        } else if (!current && next) {
+            bar.textContent = `→ ${next.start} - ${next.end} ${next.name}`;
+        } else {
+            bar.textContent = "Program ukončen.";
+        }
+
+        updateProgressBar(current);
+        }
+
+    function updateProgramBar() {
+        const { current, next } = getCurrentAndNextBlock(schedule);
+        const currentProgramText = document.getElementById("currentProgram");
+
+        if (current && next) {
+            currentProgramText.textContent = `${current.start} - ${current.end} ${current.name} → ${next.start} - ${next.end} ${next.name}`;
+        } else if (current && !next) {
+            currentProgramText.textContent = `${current.start} - ${current.end} ${current.name}`;
+        } else if (!current && next) {
+            currentProgramText.textContent = `→ ${next.start} - ${next.end} ${next.name}`;
+        } else {
+            currentProgramText.textContent = "Program ukončen.";
+        }
+
+        updateProgressBar(current);
     }
+
+
     document.getElementById("program-bar").addEventListener("click", () => {
       alert("Zde se později zobrazí celý program. (Plakát)");
     });
-    updateProgramBar();
-    setInterval(updateProgramBar, 60000); // aktualizace každou minutu
+    document.addEventListener("DOMContentLoaded", () => {
+        updateProgramBar();
+        setInterval(updateProgramBar, 60000); 
+    });
+
