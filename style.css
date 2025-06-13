@@ -355,7 +355,7 @@ footer {
 
 @media (max-width: 480px) {
   body {
-    font-size: 0.9rem; /* Globální zmenšení písma */
+    font-size: 0.9rem; 
   }
 
   h1, h2, h3, h4, h5, h6 {
