@@ -1097,70 +1097,14 @@
 
      
     }
-    function addRouteOnceWhenVisible(map, el, from, to) {
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            L.Routing.control({
-              waypoints: [L.latLng(from), L.latLng(to)],
-              router: L.Routing.osrmv1({
-                serviceUrl: 'https://router.project-osrm.org/route/v1',
-                profile: 'foot'
-              }),
-              routeWhileDragging: false,
-              show: false,
-              addWaypoints: false,
-              createMarker: () => null,
-              lineOptions: {
-                styles: [{ color: '#2f3b45', weight: 5 }]
-              }
-            }).addTo(map);
-
-            obs.disconnect(); 
-          }
-        });
-      }, { threshold: 0.1 });
-
-      observer.observe(el);
-    }
-
     
-    const routeConfigs = [
-      { map: map1, id: 'map1', lat: 49.965792201057205, lng: 16.97573241815665 },
-      { map: map2, id: 'map2', lat: 49.96585802665727, lng: 16.97147024907664 },
-      { map: map3, id: 'map3', lat: 49.96638335083531, lng: 16.973027405050953 },
-      { map: map4, id: 'map4', lat: 49.964280432703525, lng: 16.98005109481759 },
-      { map: map5, id: 'map5', lat: 49.97054860372086, lng: 16.974248772098605 },
-      { map: map6, id: 'map6', lat: 49.96396026099778, lng: 16.976148896169684 },
-      { map: map7, id: 'map7', lat: 49.96373764941263, lng: 16.97677337235151 },
-      { map: map8, id: 'map8', lat: 49.9640758650662, lng: 16.97831737000626 },
-      { map: map9, id: 'map9', lat: 49.9648730582568, lng: 16.974479729728472 },
-      { map: map10, id: 'map10', lat: 49.96574719516757, lng: 16.973064842272775 },
-      { map: map11, id: 'map11', lat: 49.96498617582337, lng: 16.974650314417037 },
-      { map: map12, id: 'map12', lat: 49.963607700000006, lng: 16.9708657 },
-      { map: map13, id: 'map13', lat: 49.9642356, lng: 16.9709015 },
-      { map: map14, id: 'map14', lat: 49.96497409999999, lng: 16.9752234 },
-      { map: map15, id: 'map15', lat: 49.9636379, lng: 16.9705509 },
-      { map: map16, id: 'map16', lat: 49.9629647, lng: 16.9744536 },
-      { map: map17, id: 'map17', lat: 49.9618575, lng: 16.9714234 },
-      { map: map18, id: 'map18', lat: 49.9616538, lng: 16.9742612 },
-      { map: map19, id: 'map19', lat: 49.962176399999996, lng: 16.9702287 },
-      { map: map20, id: 'map20', lat: 49.9652819, lng: 16.9702157 },
-      { map: map21, id: 'map21', lat: 49.960542899999995, lng: 16.9747237 },
-      { map: map22, id: 'map22', lat: 49.964209700000006, lng: 16.9740735 }
-    ];
+    setTimeout(() => {
+        [
+            map1, map2, map3, map4, map5, map6, map7, map8, map9, map10,
+            map11, map12, map13, map14, map15, map16, map17, map18, map19, map20, map21, map22
+        ].forEach(m => m.invalidateSize());
+        }, 300);
 
-    // Spusť pozorování pro každou mapu
-    routeConfigs.forEach(({ map, id, lat, lng }) => {
-      const el = document.getElementById(id);
-      if (el && map) {
-        addRouteOnceWhenVisible(map, el, startLatLng, [lat, lng]);
-      }
-    });
-      setTimeout(() => {
-        Object.values(mapLookup).forEach(map => map.invalidateSize());
-      }, 300);
- 
     const schedule = [
       { start: "09:00", end: "10:10", name: "Registrace" },
       { start: "10:15", end: "10:25", name: "Přivítání" },
