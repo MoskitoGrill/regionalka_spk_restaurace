@@ -1149,23 +1149,6 @@
 
     function updateProgramBar() {
         const { current, next } = getCurrentAndNextBlock(schedule);
-        const bar = document.getElementById("program-bar");
-
-        if (current && next) {
-            bar.textContent = `${current.start} - ${current.end} ${current.name} → ${next.start} - ${next.end} ${next.name}`;
-        } else if (current && !next) {
-            bar.textContent = `${current.start} - ${current.end} ${current.name}`;
-        } else if (!current && next) {
-            bar.textContent = `→ ${next.start} - ${next.end} ${next.name}`;
-        } else {
-            bar.textContent = "Program ukončen.";
-        }
-
-        updateProgressBar(current);
-        }
-
-    function updateProgramBar() {
-        const { current, next } = getCurrentAndNextBlock(schedule);
         const currentProgramText = document.getElementById("currentProgram");
 
         if (current && next) {
@@ -1180,6 +1163,28 @@
 
         updateProgressBar(current);
     }
+    
+    function updateProgressBar(current) {
+        const fill = document.getElementById("program-progress-fill");
+        if (!fill || !current) {
+            if (fill) fill.style.width = "0%";
+            return;
+        }
+
+        const now = new Date();
+        const [startH, startM] = current.start.split(":").map(Number);
+        const [endH, endM] = current.end.split(":").map(Number);
+
+        const startMinutes = startH * 60 + startM;
+        const endMinutes = endH * 60 + endM;
+        const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+        const total = endMinutes - startMinutes;
+        const elapsed = currentMinutes - startMinutes;
+        const percent = Math.min(100, Math.max(0, (elapsed / total) * 100));
+
+        fill.style.width = `${percent}%`;
+        }
 
 
     document.getElementById("program-bar").addEventListener("click", () => {
