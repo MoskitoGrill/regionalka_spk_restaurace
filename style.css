@@ -438,6 +438,7 @@ footer {
 }
 
 #currentProgram {
+  display: block; 
   padding: 0.5rem 1rem;
   background-color: #2f3b45;
   color: white;
